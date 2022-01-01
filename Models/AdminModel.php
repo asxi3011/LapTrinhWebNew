@@ -27,8 +27,9 @@ class AdminModel extends BaseModel {
     public function count($table) {
         
         $sql = "select count(id) as count from ${table}";
+       
         $query = $this->_query($sql);
-
+        
         $data = [];
         while ($row = mysqli_fetch_assoc($query)) {
             array_push($data, $row);

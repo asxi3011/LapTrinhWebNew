@@ -13,7 +13,8 @@
         </fieldset>
         <h4>Nhập nội dung</h4>
         <fieldset>
-            <textarea name="content" tabindex="5" required value=""><?= $data["news"][0]["content"] ?></textarea>
+            <div id="trumbowyg-demo"></div>
+            <textarea id="hidden_content" name="content" tabindex="5" required value="" hidden><?= $data["news"][0]["content"]?></textarea>
         </fieldset>
         <h4>Ngày đăng</h4>
         <fieldset>
@@ -57,3 +58,15 @@
     </form>
 </div>
 <?php require "Views/backend/layouts/footer.php"; ?>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+        var hidden_content = $("#hidden_content").val();
+        console.log(hidden_content);
+        $('#trumbowyg-demo').trumbowyg();
+        $('#trumbowyg-demo').trumbowyg('html',hidden_content);
+        
+       
+
+    })
+</script>

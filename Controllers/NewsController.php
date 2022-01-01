@@ -18,8 +18,6 @@
         }
 
         public function index() {
-
-
             $youthNews = $this->newsModel->getAllByCategoryId(1,1);
             $sportNews = $this->newsModel->getAllByCategoryId(2, 8);
             $techNews = $this->newsModel->getAllByCategoryId(3, 8);
@@ -76,8 +74,8 @@
         }
 
         public function loginView() {
-
-        $this->view("frontend.news.login.login");
+            $err = $_GET['err'] ?? NULL;
+            $this->view("frontend.news.login.login",["err"=>$err]);
 
         }
 

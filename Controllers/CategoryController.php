@@ -26,14 +26,12 @@
                 "pageTitle" => $pageTitle,
             ]);
         }
-
         public function store() {
-
+            
             $data = [
                     'name' => "name 1",
                     'description' => 'des 1'
             ];
-
             $this->categoryModel->store($data);
         }
 

@@ -10,38 +10,28 @@ class BaseModel extends Database {
 
     // Lấy tất cả dữ liệu trong bảng
     public function all($table, $select = ['*'], $orderBys = [], $limit = 10) {
-
         $columns = implode(',', $select);
-
         $orderByString = implode(' ', $orderBys);
-
         if($orderByString) {
             $sql = "SELECT ${columns} from ${table} ORDER BY ${orderByString} LIMIT ${limit}";
         }else{
             $sql = "SELECT ${columns} from ${table} LIMIT ${limit}";
         }
-
         $query = $this->_query($sql);
-
         $data = [];
-
         while ($row = mysqli_fetch_assoc($query)) {
             array_push($data, $row);
         }
-
         return $data;
     }
 
     public function lastedNews($table, $limit) {
         $sql = "SELECT * from ${table} ORDER By date_posted DESC limit ${limit}";
         $query = $this->_query($sql);
-
         $data = [];
-
         while ($row = mysqli_fetch_assoc($query)) {
             array_push($data, $row);
         }
-
         return $data;
     }
 
@@ -119,7 +109,6 @@ class BaseModel extends Database {
         $sql = "INSERT INTO ${table}(${columns}) VALUES(${values})";
 
         $this->_query($sql);
-        // echo $sql;
     }
 
     // Cập nhật dữ liệu
@@ -154,7 +143,7 @@ class BaseModel extends Database {
         $data = [];
 
         while($row = mysqli_fetch_assoc($query)) {
-            array_push($data, $row);
+            array_push($data, $row); 
         }
 
         return $data;

@@ -22,7 +22,7 @@
             </div>
             <div class="tile is-parent">
               <article class="tile is-child box">
-                <p class="title"><?= $data["sumComment"][0]["count"];?></p>
+              <p class="title"><?= $data["sumComment"][0]["count"];?></p>
                 <p class="subtitle">Bình luận</p>
               </article>
             </div>

@@ -12,7 +12,9 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/public/css/font-awesome.min.css" rel="stylesheet"
           integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.25.1/ui/trumbowyg.min.css" integrity="sha512-nwpMzLYxfwDnu68Rt9PqLqgVtHkIJxEPrlu3PfTfLQKVgBAlTKDmim1JvCGNyNRtyvCx1nNIVBfYm8UZotWd4Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" type="text/css" href="Views/backend/css/style.css">
+    
 </head>
 
 <body class="myDIV">
@@ -20,7 +22,7 @@
     <nav class="navbar is-white">
         <div class="container">
             <div class="navbar-brand">
-                <a class="navbar-item brand-text" href="index.php?controller=admin&action=pageAuthor">
+                <a class="navbar-item brand-text" href="index.php?controller=admin&action=index">
                     Admin
                 </a>
                 <div class="navbar-burger burger" data-target="navMenu">

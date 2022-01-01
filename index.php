@@ -13,6 +13,7 @@ $controllerName = ucfirst((strtolower($_REQUEST['controller'])). 'Controller') ?
 
 $actionName = $_REQUEST['action'] ?? 'index';
 
+
 require "./Controllers/${controllerName}.php";
 
 $controllerObj = new $controllerName;

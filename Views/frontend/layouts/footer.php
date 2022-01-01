@@ -27,9 +27,7 @@
             <div class="col-12 col-md-3 col-lg-2">
                 <div class="footer_main_title py-3"> Category</div>
                 <ul class="footer_menu">
-                    <?php foreach ($data["categoryName"] as $name) : ?>
-                        <li><a href="#" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; <?= $name["name"] ?><</a></li>
-                    <?php endforeach; ?>
+                   
                 </ul>
             </div>
             <div class="col-12 col-md-5 col-lg-3 position_footer_relative">

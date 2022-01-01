@@ -17,12 +17,12 @@ class AdminController extends BaseController {
 
         $username = $_POST['username'];
         $password = $_POST['password'];
-
-        if($username == "admin" && $password == "admin") {
+        $pass = md5($password);
+        
+        if($username == "admin" && $pass == md5("admin")) {
             header("Location: index.php?controller=admin&action=index");
         }else{
-            header("Location: index.php?controller=news&action=loginView");
-
+            header("Location: index.php?controller=news&action=loginView&err=3");
         }
     }
 
@@ -33,9 +33,9 @@ class AdminController extends BaseController {
         $sumCategory = $this->adminModel->count("category");
         $sumAuthor = $this->adminModel->countAuthor();
         $sumBackup = $this->adminModel->count("backup");
-        $sumComment = $this->adminModel->count("Comment");
+        $sumComment = $this->adminModel->count("comment");
         $sumSubscriber = $this->adminModel->count("subscriber");
-        $sumUser = $this->adminModel->count("User");
+        $sumUser = $this->adminModel->count("user");
 
 
         $this->view("backend.index", [
@@ -103,7 +103,7 @@ class AdminController extends BaseController {
             $name = $_POST["name"];
             $description = $_POST["description"];
 
-            $this->adminModel->insert("category", ["id" => "null", "name" => $name, "description" => $description]);
+            $this->adminModel->insert("category", ["id" => 0, "name" => $name, "description" => $description]);
 
             header("Location: index.php?controller=admin&action=category");
     }
